@@ -1,0 +1,39 @@
+{
+  "extends": "./node_modules/adonis-preset-ts/tsconfig",
+  "compilerOptions": {
+    "outDir": "build",
+    "rootDir": ".", // ✅ aqui está corrigido
+    "baseUrl": ".",
+    "sourceMap": true,
+    "paths": {
+    "App/*": ["./app/*"],
+  "Config/*": ["./config/*"],
+  "Contracts/*": ["./contracts/*"],
+  "Database/*": ["./database/*"],
+  "@ioc:Adonis/Core/*": ["node_modules/@adonisjs/core/build/adonis-ioc/*"],
+  "@ioc:Adonis/Lucid/Database": ["node_modules/@adonisjs/lucid/build/src/Database"],
+  "@ioc:Adonis/Lucid/*": ["node_modules/@adonisjs/lucid/build/adonis-ioc/*"],
+ 
+    },
+    "types": [
+      "@adonisjs/core",
+      "@adonisjs/repl",
+      "@adonisjs/lucid",
+      "@adonisjs/auth",
+      "@japa/preset-adonis/build/adonis-typings"
+    ]
+  },
+  "include": [
+    "app/**/*.ts",
+    "start/**/*.ts",
+    "config/**/*.ts",
+    "contracts/**/*.ts",
+    "database/**/*.ts",
+    "env.ts",
+    "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
